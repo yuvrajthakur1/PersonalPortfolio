@@ -201,6 +201,15 @@ const PROJECTS = [
     githubUrl: '#',
     imageUrl: '/Pallet.png'
 }
+, {
+    title: 'Catch The Pokemon',
+    description: "."
+   ,
+    tags: ['REACT JS', 'TAILWIND', 'AI', 'CSS','GEMINI'],
+    liveUrl: 'https://yuvrajthakur1.github.io/PokemonProject/',
+    githubUrl: 'https://github.com/yuvrajthakur1/PokemonProject',
+    imageUrl: '/Pallet.png'
+}
 ,];
 
 
