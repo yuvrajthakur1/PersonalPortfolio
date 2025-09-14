@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import {MapPin,BookOpenText} from 'lucide-react'
 
 // --- Reusable UI Components ---
 
@@ -54,6 +55,10 @@ const StudentInfoCard = () => {
                          <span className="absolute -bottom-2 left-0 h-1 w-24 bg-cyan-500 rounded-full transition-all duration-500 group-hover:w-full" />
                     </h2>
                     <p className="mt-1 md:text-md text-base font-semibold text-sky-300 ">Web Developer & AI Enthusiast</p>
+                    
+                    <p className="mt-1  text-sm flex flex-col items-center gap-2 mb-2 text-slate-300 "><MapPin className='w-7'/>RAISEN || BHOPAL || MADHYA PRADESH </p>
+                    
+                    <p className="mt-1  text-sm flex flex-col items-center gap-2  text-slate-300 "><BookOpenText className='w-7'/>BTECH || CSE || RGPV || 2025 </p>
                    
                 </div>
                 <div className="mt-6 flex justify-center space-x-6">

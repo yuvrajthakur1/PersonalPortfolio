@@ -40,7 +40,7 @@ export default function Contact() {
 
           {/* LinkedIn */}
           <a
-            href="https://linkedin.com/in/yourprofile"
+            href="https://www.linkedin.com/in/yuvraj-thakur-573249294?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
             target="_blank"
             rel="noopener noreferrer"
             className="group  bg-slate-900/50 backdrop-blur-lg  rounded-2xl p-8 shadow-md flex flex-col items-center transition"

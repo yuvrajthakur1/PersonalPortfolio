@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import  { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 
 // --- SVG Icons ---
@@ -41,7 +41,7 @@ export default function ChatBot() {
     const [error, setError] = useState('');
     const chatContainerRef = useRef(null);
 
-    const initialMessage = { text: "Hello! I'm a chat assistant powered by Gemini. Ask me anything!", sender: 'model' };
+    const initialMessage = { text: "Hello! I'm a chat your personal AI assistant . Ask me anything!", sender: 'model' };
 
     // Effect to load marked.js for markdown parsing
     useEffect(() => {
@@ -92,7 +92,8 @@ export default function ChatBot() {
         setIsLoading(true);
         setError('');
 
-        const apiKey = "AIzaSyB-wlZ3hzIfYB_JyqlC53yZtuVCYcbHi9U"; // <-- PASTE YOUR API KEY HERE
+        const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+
         const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
         
         const chatHistory = currentMessages.map(msg => ({
@@ -273,6 +274,9 @@ const TypingIndicator = () => (
         </div>
     </div>
 );
+
+
+
 
 
 const style = document.createElement('style');

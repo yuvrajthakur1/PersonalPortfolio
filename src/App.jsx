@@ -192,6 +192,15 @@ const PROJECTS = [
     githubUrl: 'https://github.com/yuvrajthakur1/streamlit-cancer-prediction/blob/master/app/main.py',
     imageUrl: '/Breast.png'
 }
+, {
+    title: 'AI Color Combo Generator',
+    description: "."
+   ,
+    tags: ['REACT JS', 'TAILWIND', 'AI', 'CSS','GEMINI'],
+    liveUrl: '/color',
+    githubUrl: '#',
+    imageUrl: '/Pallet.png'
+}
 ,];
 
 
@@ -360,13 +369,13 @@ export default function App() {
                             My Projects
                             <span className="absolute -bottom-2 left-0 h-1 w-24 bg-cyan-500 rounded-full transition-all duration-500 group-hover:w-full" />
                         </h2>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                        <div className="grid grid-cols-1 md:grid-cols-2 l gap-8">
                            
                            {
                             visibleProject.map((project,i)=>{
                                 return <div key={i} className='shadow-lg md:gap-8 gap-5 bg-slate-900/50 backdrop-blur-lg    rounded-md p-4   flex flex-col'>
-                                       <div className='md:h-52 h-32 overflow-hidden p-4'>
-                                        <img src={project.imageUrl} className='scale-150' alt="" />
+                                       <div className='md:h-52 h-28 overflow-hidden p-4'>
+                                        <img src={project.imageUrl} className='scale-150' alt="Project URL" />
                                        </div>
                                        <div className='p-3 flex flex-col gap-2'>
                                          <details>
@@ -375,10 +384,10 @@ export default function App() {
                                          </details>
                                 
 
-                                        <div className='grid grid-cols-2 mt-4 mb-2 justify-items-center gap-4 '>
+                                        <div className='grid grid-cols-2  mt-4 mb-2 justify-items-center gap-4 '>
                                             {
                                                 project.tags.map((tag,i)=>{
-                                                    return <h5 key={i} className='bg-blue-500 py-1 md:px-8 p-4 md:text-lg sm:text-md  text-base rounded-md'>{tag}</h5>
+                                                    return <h5 key={i} className='bg-blue-500 py-1 md:px-8 px-3 md:text-md   text-base rounded-md'>{tag}</h5>
                                                 })
                                             }
                                         </div>

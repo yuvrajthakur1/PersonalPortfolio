@@ -130,7 +130,7 @@ export default function Pantry() {
         setFoundRecipes([]);
 
         // --- IMPORTANT: Replace with your actual API key ---
-        const apiKey = "AIzaSyB-wlZ3hzIfYB_JyqlC53yZtuVCYcbHi9U"; 
+        const apiKey = import.meta.env.VITE_GEMINI_API_KEY; 
         const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
 
         const prompt = `You are a master chef. Based on these ingredients: ${ingredients.join(', ')}, suggest between 2 and 4 simple recipes. Respond ONLY with a valid JSON array of objects. Each object must have these exact keys: "id" (a unique number), "title" (string), "ingredients" (an array of strings), and "steps" (an array of strings, with each string being a single step in the cooking process).`;
