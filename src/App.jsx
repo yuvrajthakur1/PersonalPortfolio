@@ -208,7 +208,7 @@ const PROJECTS = [
     tags: ['REACT JS', 'TAILWIND', 'AI', 'CSS','GEMINI'],
     liveUrl: 'https://yuvrajthakur1.github.io/PokemonProject/',
     githubUrl: 'https://github.com/yuvrajthakur1/PokemonProject',
-    imageUrl: '/Pallet.png'
+    imageUrl: '/pokemon.png'
 }
 ,];
 
