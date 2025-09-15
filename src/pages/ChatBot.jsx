@@ -33,6 +33,8 @@ const CheckIcon = () => (
 );
 
 
+
+
 // --- Main App Component ---
 export default function ChatBot() {
     const [messages, setMessages] = useState([]);
@@ -41,7 +43,7 @@ export default function ChatBot() {
     const [error, setError] = useState('');
     const chatContainerRef = useRef(null);
 
-    const initialMessage = { text: "Hello! I'm a chat your personal AI assistant . Ask me anything!", sender: 'model' };
+    const initialMessage = { text: "Hello! I'm a help buddy your personal AI assistant . Ask me anything!", sender: 'model' };
 
     // Effect to load marked.js for markdown parsing
     useEffect(() => {
@@ -163,6 +165,10 @@ export default function ChatBot() {
         setMessages([initialMessage]);
         localStorage.removeItem('chatMessages');
     }
+
+
+
+
 
     return (
         <div className="bg-gray-100 flex items-center justify-center h-screen font-sans">

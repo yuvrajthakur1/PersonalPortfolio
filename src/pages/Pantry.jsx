@@ -179,7 +179,7 @@ export default function Pantry() {
 
         } catch (err) {
             console.error("Failed to fetch recipes:", err);
-            setError("Sorry, I couldn't fetch any recipes. Please check your API key and try again.");
+            setError(`Sorry, couldn't generate a palette. Error: ${err.message}`);
         } finally {
             setLoading(false);
         }
