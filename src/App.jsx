@@ -4,6 +4,7 @@ import AboutSection from './components/About';
 import Contact from './components/Contact';
 
 
+
 // --- SVG Icons (as components for reusability) ---
 const MailIcon = ({ className }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
@@ -112,6 +113,8 @@ const StarfieldBackground = () => {
 };
 
 
+
+
 // --- Custom Hooks ---
 const useIntersectionObserver = options => {
     const [entry, setEntry] = useState(null);
@@ -128,6 +131,9 @@ const useIntersectionObserver = options => {
     return [setNode, entry];
 };
 
+
+
+
 // --- Reusable Animated Section Component ---
 const AnimatedSection = ({ children, className }) => {
     const [ref, entry] = useIntersectionObserver({ threshold: 0.1 });
@@ -141,6 +147,7 @@ const AnimatedSection = ({ children, className }) => {
         </div>
     );
 };
+
 
 
 
@@ -160,17 +167,26 @@ const SKILLS = [
     { name: 'Postman', icon: 'https://cdn.svgporn.com/logos/postman.svg' },
     { name: 'Git', icon: 'https://cdn.svgporn.com/logos/git.svg' },
     { name: 'GitHub', icon: 'https://cdn.svgporn.com/logos/github.svg' }
-    
 ];
+
+
 
 
 
 
 const PROJECTS = [
     {
+    title: 'Tech Buddy',
+    description: "Ace Your Interview with AIPrepare for your next job interview with our AI-powered Tech Buddy platform. Practice technical and HR questions, get instant feedback, and track your progress to build confidence and land your dream job.",
+    tags: "React, AI, Gemini, Tailwind CSS, Node, Express, MongoDB, Rest API, Rechart",
+    liveUrl: 'https://techbuddyfrontend.netlify.app/',
+    githubUrl: 'https://github.com/yuvrajthakur1/techBuddy_Frontend',
+    imageUrl: '/TechBuddy.png'
+}, 
+    {
     title: 'Help Buddy',
     description: "This project is a fully-featured, responsive chat application that allows users to have interactive conversations with Google's powerful Gemini AI. It's designed with a clean, modern user interface and provides a seamless user experience, complete with persistent chat history and rich text formatting",
-    tags: ['React', 'AI', 'Gemini', 'Tailwind CSS'],
+    tags: "React, AI, Gemini, Tailwind CSS",
     liveUrl: '/chatbot',
     githubUrl: '#',
     imageUrl: '/ChatBot.png'
@@ -178,7 +194,7 @@ const PROJECTS = [
     title: 'AI Powered PantryChef',
     description: "PantryChef is a responsive single-page application designed to solve the common kitchen dilemma: What can I make with the ingredients I have? Users can input the items from their pantry or fridge, and the app leverages the power of Google's Gemini AI to generate creative and simple recipe suggestions in real-time. The application features a warm, classic design with subtle animations to create an engaging and intuitive user experience."
    ,
-    tags: ['React', 'JavaScript', 'HTML', 'Tailwind CSS'],
+    tags: "React, JavaScript, HTML, Tailwind CSS",
     liveUrl: '/pantry',
     githubUrl: '#',
     imageUrl: '/Pantry.png'
@@ -187,7 +203,7 @@ const PROJECTS = [
     title: 'Breast Cancer Predictor App',
     description: "Breast Cancer Predictor App is a machine learning–powered tool designed to assist in the early detection of breast cancer risk. By analyzing key medical data such as cell measurements and clinical features, the app predicts the likelihood of malignancy with high accuracy. It provides users with an easy-to-use interface for inputting test results, visualizes predictions clearly, and supports healthcare professionals in decision-making. While not a replacement for medical diagnosis, it offers an additional layer of insight to encourage timely consultations and screenings."
    ,
-    tags: ['AI', 'ML', 'PREPROCESSING', 'STREAMLIT','KAGGLE'],
+    tags: "AI, ML, PREPROCESSING, STREAMLIT, KAGGLE",
     liveUrl: 'https://yuvismlpro.streamlit.app/',
     githubUrl: 'https://github.com/yuvrajthakur1/streamlit-cancer-prediction/blob/master/app/main.py',
     imageUrl: '/Breast.png'
@@ -196,7 +212,7 @@ const PROJECTS = [
     title: 'AI Color Combo Generator',
     description: "."
    ,
-    tags: ['REACT JS', 'TAILWIND', 'AI', 'CSS','GEMINI'],
+    tags: "REACT JS, TAILWIND, AI, CSS, GEMINI",
     liveUrl: '/color',
     githubUrl: '#',
     imageUrl: '/Pallet.png'
@@ -205,7 +221,7 @@ const PROJECTS = [
     title: 'Catch The Pokemon',
     description: "."
    ,
-    tags: ['REACT JS', 'TAILWIND', 'AI', 'CSS','GEMINI'],
+    tags: "REACT JS, TAILWIND, AI, CSS, GEMINI",
     liveUrl: 'https://yuvrajthakur1.github.io/PokemonProject/',
     githubUrl: 'https://github.com/yuvrajthakur1/PokemonProject',
     imageUrl: '/pokemon.png'
@@ -305,7 +321,7 @@ export default function App() {
                     </button>
                 </div>
                 {isMenuOpen && (
-                    <div className="md:hidden bg-gray-900">
+                    <div className="md:hidden bg-gray-900 pb-3">
                         <ul className="flex flex-col space-y-8 text-center">
                             {navLinks.map(({ id, title }) => (
                                 <li key={id}>
@@ -347,6 +363,9 @@ export default function App() {
                        <AboutSection/>
                     </AnimatedSection>
                 </section>
+
+
+
                 
                 {/* --- Skills Section --- */}
                 <section ref={sectionRefs.skills} id="skills" className="py-24 scroll-mt-14">
@@ -371,8 +390,12 @@ export default function App() {
                     </AnimatedSection>
                 </section>
 
+
+
+
+
                 {/* --- Projects Section --- */}
-                <section ref={sectionRefs.projects} id="projects" className="py-24   scroll-mt-24">
+                <section ref={sectionRefs.projects} id="projects" className=" py-10 scroll-mt-24">
                     <AnimatedSection>
                         <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 relative inline-block group">
                             My Projects
@@ -393,21 +416,20 @@ export default function App() {
                                          </details>
                                 
 
-                                        <div className='grid grid-cols-2  mt-4 mb-2 justify-items-center gap-4 '>
-                                            {
-                                                project.tags.map((tag,i)=>{
-                                                    return <h5 key={i} className='bg-blue-500 py-1 md:px-8 px-3 md:text-md   text-base rounded-md'>{tag}</h5>
-                                                })
-                                            }
+                                        <div className='grid grid-cols-2  mt-1 mb-1 justify-items-start gap-2 '>
+                                           <details>
+                                            <summary className='font-semibold text-sky-300'>Tech Stack</summary>
+                                            <p className='p-1 text-slate-30'>{project.tags}</p>
+                                           </details>
                                         </div>
                                        </div>
                                        <div>
                                        <div className='flex justify-around'>
                                          <div className='flex justify-center'>
-                                             <NavLink to={project.liveUrl} className=" rounded-md py-1 px-2 md:text-lg sm:text-md text-base bg-green-700 hover:bg-green-600 transform hover:rotate-2">Live Demo</NavLink>
+                                             <NavLink to={project.liveUrl} className=" rounded py-1 px-2 md:text-lg sm:text-md text-base bg-green-700 hover:bg-green-600 transform hover:rotate-2">Live Demo</NavLink>
                                         </div>
                                        <div className='flex justify-center'>
-                                             <a href={project.githubUrl} className="  py-1 px-2 rounded-sm md:text-lg sm:text-md text-base bg-green-700 hover:bg-green-600 transform hover:rotate-2">Git Hub</a>
+                                             <a href={project.githubUrl} className="  py-1 px-2 rounded md:text-lg sm:text-md text-base bg-green-700 hover:bg-green-600 transform hover:rotate-2">Git Hub</a>
                                         </div>
                                        </div>
                                        </div>
